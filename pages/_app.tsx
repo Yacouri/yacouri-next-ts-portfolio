@@ -7,6 +7,7 @@ import { darkMode, lightMode } from '../styles/themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useTheme();
+  
   return (
     <ThemeProvider theme={theme === 'light' ? lightMode : darkMode}>
       <Layout>
