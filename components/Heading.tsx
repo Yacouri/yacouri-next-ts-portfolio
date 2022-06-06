@@ -39,6 +39,9 @@ const StyledBox = styled.div`
 `;
 const StyledLinkWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.text.primary};
+  svg {
+    stroke: ${({ theme }) => theme.text.primary};
+  }
 `;
 const StyledLinkButton = styled.button`
   background-color: ${({ theme }) => theme.text.primary};
