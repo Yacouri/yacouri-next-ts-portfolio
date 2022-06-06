@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// TODO: create resusable icon template
 const yicons = {
   stars: (
     <>
@@ -47,12 +48,33 @@ const yicons = {
       strokeLinecap="round"
       strokeLinejoin="round"
     />
+  ),
+  doubletr: (
+    <>
+      <path
+        d="M37.5 37.5L2 37.5C2 17.8939 17.8939 1.99999 37.5 1.99999L37.5 37.5ZM37.5 37.5L73 37.5C73 57.1061 57.1061 73 37.5 73L37.5 37.5Z"
+        strokeWidth="2.17"
+      />
+    </>
+  ),
+  outlinedCircles: (
+    <>
+      <path
+        d="M72 36.5C72 56.1061 56.1061 72 36.5 72C16.8939 72 1 56.1061 1 36.5C1 16.8939 16.8939 1 36.5 1C56.1061 1 72 16.8939 72 36.5Z"
+        strokeWidth="1.18"
+      />
+      <path
+        d="M48.5339 36.5C48.5339 43.1461 43.1461 48.5339 36.5 48.5339C29.8539 48.5339 24.4661 43.1461 24.4661 36.5C24.4661 29.8539 29.8539 24.4661 36.5 24.4661C43.1461 24.4661 48.5339 29.8539 48.5339 36.5Z"
+        strokeWidth="1.18"
+      />
+      <path
+        d="M60.5678 36.5C60.5678 49.7923 49.7923 60.5678 36.5 60.5678C23.2077 60.5678 12.4322 49.7923 12.4322 36.5C12.4322 23.2077 23.2077 12.4322 36.5 12.4322C49.7923 12.4322 60.5678 23.2077 60.5678 36.5Z"
+        strokeWidth="1.18"
+      />
+    </>
   )
 };
 
-const StyledYicon = styled.svg`
-  stroke: ${({ theme }) => theme.text.primary};
-`;
 const YiconWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -62,14 +84,14 @@ const YiconWrapper = styled.div`
 const YIcon = ({ size, color, fill, icon }: SvgIconProps) => {
   return (
     <YiconWrapper>
-      <StyledYicon
+      <svg
         width={size || 24}
         height={size || 24}
         stroke={color}
         fill={fill || 'none'}
         xmlns="http://www.w3.org/2000/svg">
         {yicons[icon]}
-      </StyledYicon>
+      </svg>
     </YiconWrapper>
   );
 };
