@@ -26,7 +26,8 @@ const StyledWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.text.primary};
   transition: transform 0.3s, background-color 0.3s;
   p {
-    color: ${({ theme }) => theme.palette.body};
+    font-weight: 500;
+    color: ${({ theme }) => theme.body};
   }
   &:hover {
     background-color: transparent;
