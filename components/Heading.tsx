@@ -3,8 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 import YIcon from './common/IconComponent/Yicon';
 import Shapes from './Shapes';
-import UncompleteCircle from '../assets/images/uncomplet_circle_outlined.png';
-import Image from 'next/image';
 
 const HeadingWrapper = styled.div`
   margin-top: 100px;
