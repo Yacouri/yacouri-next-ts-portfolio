@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
-import LetterMark from './LetterMark';
+import LetterMark from '../LetterMark';
 import { Sun, Moon } from 'react-feather';
-import useTheme from '../hooks/useTheme';
+import useTheme from '../../hooks/useTheme';
 
 const NavbarWrapper = styled.div`
   display: flex;
