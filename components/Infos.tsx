@@ -2,14 +2,25 @@ import React from 'react';
 import styled, { useTheme } from 'styled-components';
 import Card from './common/Card';
 
+type BoxProps = {
+  fullHeight?: boolean;
+};
+
 const InfosWrapper = styled.div`
-  /* width: 60%; */
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 100px;
 `;
-const StyledBox = styled.div``;
+const StyledBox = styled.div<BoxProps>`
+  ${(props) =>
+    props.fullHeight &&
+    `
+    > div {
+      height: calc(100% - 85px);
+    }
+  `}
+`;
 
 const Infos = () => {
   const theme = useTheme();
@@ -32,13 +43,14 @@ const Infos = () => {
         />
       </StyledBox>
 
-      <StyledBox>
+      <StyledBox fullHeight>
         <Card
           textColor="white"
           title={['Main', 'Stack']}
           iconName="doubletr"
           caption="There are some technologies & tools that i am using in my Job & Personal projects ."
           bgColor={theme.palette.black['600']}
+          hasTools
         />
       </StyledBox>
     </InfosWrapper>

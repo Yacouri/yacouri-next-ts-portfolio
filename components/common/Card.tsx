@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import ToolCard from '../ToolCard';
+import Tools from '../Tools';
 import YIcon from './IconComponent/Yicon';
 
 type CardProps = {
@@ -8,6 +10,7 @@ type CardProps = {
   caption: string;
   bgColor: string;
   textColor: string;
+  hasTools?: boolean;
 };
 type StyleProps = {
   bg?: string;
@@ -37,7 +40,14 @@ const CardCaption = styled.p<StyleProps>`
   color: ${(props) => props.color};
 `;
 
-const Card: React.FC<CardProps> = ({ title, iconName, caption, bgColor, textColor }: CardProps) => {
+const Card: React.FC<CardProps> = ({
+  title,
+  iconName,
+  caption,
+  bgColor,
+  textColor,
+  hasTools
+}: CardProps) => {
   return (
     <StyledCard bg={bgColor}>
       <CardHeader>
@@ -51,6 +61,7 @@ const Card: React.FC<CardProps> = ({ title, iconName, caption, bgColor, textColo
         </CardIcon>
       </CardHeader>
       <CardCaption color={textColor}>{caption}</CardCaption>
+      {hasTools && <Tools />}
     </StyledCard>
   );
 };
