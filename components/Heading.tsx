@@ -66,7 +66,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Heading: React.FC = () => {
+const Heading = () => {
   return (
     <HeadingWrapper>
       <Shapes />
