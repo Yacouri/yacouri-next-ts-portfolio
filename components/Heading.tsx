@@ -3,6 +3,12 @@ import React from 'react';
 import styled from 'styled-components';
 import YIcon from './common/IconComponent/Yicon';
 import Shapes from './Shapes';
+import Stars from '../assets/icons/stars.svg';
+import Github from '../assets/icons/github.svg';
+import Twitter from '../assets/icons/twitter.svg';
+import Behance from '../assets/icons/behance.svg';
+import Dribbble from '../assets/icons/dribbble.svg';
+import Magnet from '../assets/icons/magnet.svg';
 
 const HeadingWrapper = styled.div`
   margin-top: 100px;
@@ -38,7 +44,7 @@ const StyledBox = styled.div`
 const StyledLinkWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.text.primary};
   svg {
-    stroke: ${({ theme }) => theme.text.primary};
+    fill: ${({ theme }) => theme.text.primary};
   }
 `;
 const StyledLinkButton = styled.button`
@@ -70,30 +76,40 @@ const Heading = () => {
   return (
     <HeadingWrapper>
       <Shapes />
-      <YIcon size={70} icon="stars" />
+      <YIcon>
+        <Stars width={70} height={70} fill="none" />
+      </YIcon>
       <StyledTypography>
         Front end developer <br />
         &amp; Ui/Ux <StyledSpan>Designer</StyledSpan>
       </StyledTypography>
       <StyledBox>
         <StyledLinkWrapper>
-          <Link href="#">
-            <YIcon size={50} icon="github" />
+          <Link href="#" passHref>
+            <YIcon>
+              <Twitter fontSize={'2.5rem'} />
+            </YIcon>
           </Link>
         </StyledLinkWrapper>
         <StyledLinkWrapper>
-          <Link href="#">
-            <YIcon size={50} icon="twitter" />
+          <Link href="#" passHref>
+            <YIcon>
+              <Github fontSize={'2.5rem'} />
+            </YIcon>
           </Link>
         </StyledLinkWrapper>
         <StyledLinkWrapper>
-          <Link href="#">
-            <YIcon size={50} icon="behance" />
+          <Link href="#" passHref>
+            <YIcon>
+              <Behance fontSize={'2.5rem'} />
+            </YIcon>
           </Link>
         </StyledLinkWrapper>
         <StyledLinkWrapper>
-          <Link href="#">
-            <YIcon size={50} icon="dribbble" />
+          <Link href="#" passHref>
+            <YIcon>
+              <Dribbble fontSize={'2.5rem'} />
+            </YIcon>
           </Link>
         </StyledLinkWrapper>
         <Divider />
@@ -101,9 +117,7 @@ const Heading = () => {
       </StyledBox>
 
       <ImageWrapper>
-        <svg width="318" height="271" viewBox="0 0 318 271" xmlns="http://www.w3.org/2000/svg">
-          <path d="M270.92 270.761C293.056 248.625 308.131 220.422 314.238 189.719C320.345 159.016 317.211 127.191 305.231 98.2697C293.251 69.348 272.964 44.6282 246.935 27.2362C220.906 9.8443 190.305 0.561387 159 0.561387C127.695 0.561385 97.0937 9.8443 71.0648 27.2362C45.0359 44.6282 24.7489 69.348 12.7691 98.2698C0.789319 127.191 -2.34513 159.016 3.76211 189.719C9.86933 220.422 24.944 248.625 47.0797 270.761L73.845 243.996C57.0029 227.154 45.5333 205.695 40.8866 182.335C36.2399 158.974 38.6248 134.76 47.7396 112.755C56.8545 90.7498 72.29 71.9416 92.0942 58.7089C111.898 45.4762 135.182 38.4132 159 38.4132C182.818 38.4132 206.102 45.4762 225.906 58.7089C245.71 71.9416 261.146 90.7498 270.26 112.755C279.375 134.76 281.76 158.974 277.113 182.335C272.467 205.695 260.997 227.154 244.155 243.996L270.92 270.761Z" />
-        </svg>
+        <Magnet width={320} height={320} />
       </ImageWrapper>
     </HeadingWrapper>
   );
