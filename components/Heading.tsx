@@ -9,6 +9,7 @@ import Twitter from '../assets/icons/twitter.svg';
 import Behance from '../assets/icons/behance.svg';
 import Dribbble from '../assets/icons/dribbble.svg';
 import Magnet from '../assets/icons/magnet.svg';
+import useTheme from '../hooks/useTheme';
 
 const HeadingWrapper = styled.div`
   margin-top: 100px;
@@ -73,11 +74,12 @@ const ImageWrapper = styled.div`
 `;
 
 const Heading = () => {
+  const { mode } = useTheme();
   return (
     <HeadingWrapper>
       <Shapes />
       <YIcon>
-        <Stars width={70} height={70} fill="none" />
+        <Stars width={70} height={70} fill="none" stroke={mode.text.primary} />
       </YIcon>
       <StyledTypography>
         Front end developer <br />
