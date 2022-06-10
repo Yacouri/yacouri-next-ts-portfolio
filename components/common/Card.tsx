@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import ToolCard from '../ToolCard';
+// import ToolCard from '../ToolCard';
 import Tools from '../Tools';
 import YIcon from './IconComponent/Yicon';
 
 type CardProps = {
   title: [string, string];
-  iconName: string;
+  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
   caption: string;
   bgColor: string;
   textColor: string;
@@ -33,21 +33,19 @@ const CardTitle = styled.h2<StyleProps>`
   width: 50%;
   color: ${(props) => props.color};
 `;
-const CardIcon = styled.div``;
+const CardIcon = styled.div`
+  svg {
+    width: 70px;
+    height: 70px;
+  }
+`;
 const CardCaption = styled.p<StyleProps>`
   width: 90%;
   margin-top: 2rem;
   color: ${(props) => props.color};
 `;
 
-const Card: React.FC<CardProps> = ({
-  title,
-  iconName,
-  caption,
-  bgColor,
-  textColor,
-  hasTools
-}: CardProps) => {
+const Card = ({ title, Icon, caption, bgColor, textColor, hasTools }: CardProps) => {
   return (
     <StyledCard bg={bgColor}>
       <CardHeader>
@@ -57,7 +55,10 @@ const Card: React.FC<CardProps> = ({
           {title[1]}
         </CardTitle>
         <CardIcon>
-          <YIcon size={70} icon={iconName} color={textColor} />
+          {/* <YIcon size={70} icon={iconName} color={textColor} /> */}
+          <YIcon>
+            <Icon />
+          </YIcon>
         </CardIcon>
       </CardHeader>
       <CardCaption color={textColor}>{caption}</CardCaption>
