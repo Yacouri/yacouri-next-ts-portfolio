@@ -36,14 +36,14 @@ const Infos = () => {
           title={['Current', 'Status']}
           Icon={() => <Circles />}
           caption="Working as a Frontend Web Developer & Ui/UX Designer at ELBOTOLA"
-          bgColor={mode.palette.green['400']}
+          bgColor={mode.palette.green['gradient']}
         />
         <Card
           textColor="white"
           title={['Know', 'More']}
           Icon={() => <Stars fill="none" stroke="white" />}
           caption="I'm Zouhir Yaçouri AKA YACOURI, a front end web developer & self-taught Ui/Ux designer as well."
-          bgColor={mode.palette.blue['400']}
+          bgColor={mode.palette.blue['gradient']}
         />
       </StyledBox>
 
@@ -53,7 +53,7 @@ const Infos = () => {
           title={['Main', 'Stack']}
           Icon={() => <DoubleTr />}
           caption="There are some technologies & tools that i am using in my Job & Personal projects ."
-          bgColor={mode.palette.black['600']}
+          bgColor={mode.palette.black['gradient']}
           hasTools
         />
       </StyledBox>

@@ -20,7 +20,7 @@ type StyleProps = {
 const StyledCard = styled.div<StyleProps>`
   padding: 2rem;
   margin-bottom: 20px;
-  background-color: ${(props) => props.bg};
+  background: ${(props) => props.bg};
   max-width: 400px;
   min-height: 190px;
 `;
