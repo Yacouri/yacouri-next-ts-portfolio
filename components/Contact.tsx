@@ -1,10 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionTitle from './common/SectionTitle';
+import Magnet from '../assets/icons/magnet.svg';
 
 const ContactWrapper = styled.div`
+  position: relative;
   width: 60%;
-  margin: 100px auto;
+  margin: 100px auto 200px auto;
+  svg {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -500px;
+    fill: ${({ theme }) => theme.text.primary};
+  }
 `;
 const SubTitle = styled.h2`
   color: ${({ theme }) => theme.text.primary};
@@ -33,6 +43,7 @@ const StyledButton = styled.button`
 const Contact = () => {
   return (
     <ContactWrapper>
+      <Magnet />
       <SectionTitle title="Let's work together!" />
       <SubTitle>Take your business online</SubTitle>
       <Caption>
