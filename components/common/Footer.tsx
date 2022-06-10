@@ -2,6 +2,10 @@ import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 import YIcon from './IconComponent/Yicon';
+import Github from '../../assets/icons/github.svg';
+import Twitter from '../../assets/icons/twitter.svg';
+import Behance from '../../assets/icons/behance.svg';
+import Dribbble from '../../assets/icons/dribbble.svg';
 
 type BoxChildProps = {
   flex?: boolean;
@@ -53,23 +57,31 @@ const Footer = () => {
         </BoxChild>
         <BoxChild flex>
           <StyledLinkWrapper>
-            <Link href="#">
-              <YIcon size={50} icon="github" />
+            <Link href="#" passHref>
+              <YIcon>
+                <Twitter fontSize={'2rem'} />
+              </YIcon>
             </Link>
           </StyledLinkWrapper>
           <StyledLinkWrapper>
-            <Link href="#">
-              <YIcon size={50} icon="twitter" />
+            <Link href="#" passHref>
+              <YIcon>
+                <Github fontSize={'2rem'} />
+              </YIcon>
             </Link>
           </StyledLinkWrapper>
           <StyledLinkWrapper>
-            <Link href="#">
-              <YIcon size={50} icon="behance" />
+            <Link href="#" passHref>
+              <YIcon>
+                <Behance fontSize={'2rem'} />
+              </YIcon>
             </Link>
           </StyledLinkWrapper>
           <StyledLinkWrapper>
-            <Link href="#">
-              <YIcon size={50} icon="dribbble" />
+            <Link href="#" passHref>
+              <YIcon>
+                <Dribbble fontSize={'2rem'} />
+              </YIcon>
             </Link>
           </StyledLinkWrapper>
         </BoxChild>
