@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import ToolCard from '../ToolCard';
 import Tools from '../Tools';
 import YIcon from './IconComponent/Yicon';
 
@@ -55,7 +54,6 @@ const Card = ({ title, Icon, caption, bgColor, textColor, hasTools }: CardProps)
           {title[1]}
         </CardTitle>
         <CardIcon>
-          {/* <YIcon size={70} icon={iconName} color={textColor} /> */}
           <YIcon>
             <Icon />
           </YIcon>
