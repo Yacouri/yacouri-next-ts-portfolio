@@ -14,7 +14,8 @@ const Box = styled.div`
   cursor: pointer;
   padding: 1rem;
   border: 1px solid ${({ theme }) => theme.text.primary};
-  flex: 0.3;
+  /* flex: 0.3; */
+  width: 25%;
   transition: transform 0.3s;
   &:hover {
     transform: rotate(-3deg);
