@@ -1,16 +1,18 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import LetterMark from '../LetterMark';
 import { Sun, Moon } from 'react-feather';
+import Menu from '../../assets/icons/menu.svg';
 import useTheme from '../../hooks/useTheme';
+import Sidebar from './Sidebar';
 
 const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 80%;
-  margin: 20px auto;
+  margin: 30px auto;
 `;
 const NavList = styled.nav`
   display: flex;
@@ -37,14 +39,26 @@ const StyledMoonIcon = styled(Moon)`
 const StyledSunIcon = styled(Sun)`
   color: ${({ theme }) => theme.text.primary};
 `;
+const StyledMenuIcon = styled(Menu)`
+  cursor: pointer;
+  fill: ${({ theme }) => theme.text.primary};
+  font-size: 20px;
+`;
+const Box = styled.div`
+  display: flex;
+  gap: 20px;
+  align-items: center;
+`;
 
 const Navbar: React.FC = () => {
   const { theme, themeToggler } = useTheme();
+  const [width, setWidth] = useState('0%');
   return (
-    <NavbarWrapper>
-      <LetterMark />
-      <NavList>
-        <ListItem>
+    <>
+      <NavbarWrapper>
+        <LetterMark />
+        {/* <NavList> */}
+        {/* <ListItem>
           <Link href="#">01.Home</Link>
         </ListItem>
         <ListItem>
@@ -55,15 +69,20 @@ const Navbar: React.FC = () => {
         </ListItem>
         <ListItem>
           <Link href="#">04.Skills</Link>
-        </ListItem>
-        <Separator />
-        {theme === 'light' ? (
-          <StyledMoonIcon size={18} cursor="pointer" onClick={themeToggler} />
-        ) : (
-          <StyledSunIcon size={18} cursor="pointer" onClick={themeToggler} />
-        )}
-      </NavList>
-    </NavbarWrapper>
+        </ListItem> */}
+        {/* <Separator /> */}
+        {/* </NavList> */}
+        <Box>
+          {theme === 'light' ? (
+            <StyledMoonIcon size={20} cursor="pointer" onClick={themeToggler} />
+          ) : (
+            <StyledSunIcon size={20} cursor="pointer" onClick={themeToggler} />
+          )}
+          <StyledMenuIcon onClick={() => setWidth('100%')} />
+        </Box>
+      </NavbarWrapper>
+      <Sidebar width={width} setWidth={setWidth} />
+    </>
   );
 };
 
