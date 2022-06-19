@@ -14,7 +14,9 @@ const BlogWrapper = styled.div`
     width: 80%;
   }
   ${breakpoints.md} {
-    width: 90%;
+    /* width: fit-content; */
+    width: 70%;
+    margin: 50px auto;
   }
 `;
 const Box = styled.div`
@@ -26,9 +28,10 @@ const Box = styled.div`
     flex: 0.33;
   }
   ${breakpoints.md} {
+    flex-wrap: nowrap;
     flex-direction: column;
     > div {
-      width: 100%;
+      flex: 1;
     }
   }
 `;

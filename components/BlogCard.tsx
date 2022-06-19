@@ -15,18 +15,20 @@ const Box = styled.div`
   cursor: pointer;
   padding: 1rem;
   border: 1px solid ${({ theme }) => theme.text.primary};
-  /* flex: 0.3; */
-  /* width: 25%; */
   transition: transform 0.3s;
   &:hover {
     transform: rotate(-3deg);
+  }
+  ${breakpoints.md} {
+    max-width: 100%;
+    max-height: 500px;
   }
 `;
 const BlogImage = styled.img`
   border-radius: 10px;
   width: 100%;
   ${breakpoints.md} {
-    height: 50%;
+    width: 100%;
   }
 `;
 const StyledBox = styled.div`
@@ -43,6 +45,9 @@ const StyledTitle = styled.h3`
   color: ${({ theme }) => theme.text.primary};
   margin-top: 10px;
   font-weight: 600;
+  ${breakpoints.md} {
+    font-size: 1.5rem;
+  }
 `;
 
 const BlogCard = ({ img, date, readTime, title, url }: CardProps) => {
