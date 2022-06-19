@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import LetterMark from '../LetterMark';
@@ -13,25 +12,6 @@ const NavbarWrapper = styled.div`
   justify-content: space-between;
   max-width: 80%;
   margin: 30px auto;
-`;
-const NavList = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: 40px;
-`;
-const ListItem = styled.li`
-  list-style: none;
-  a {
-    color: ${({ theme }) => theme.text.primary};
-    font-weight: 600;
-    text-decoration: none;
-  }
-`;
-const Separator = styled.div`
-  display: inline-block;
-  height: 10px;
-  width: 1px;
-  background-color: ${({ theme }) => theme.text.muted};
 `;
 const IconWrapper = styled.div`
   svg {
