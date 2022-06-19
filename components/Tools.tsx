@@ -8,15 +8,18 @@ import AdobeXdLogo from '../assets/logos/adobexd.png';
 import ToolCard from './ToolCard';
 import styled from 'styled-components';
 import Image from 'next/image';
+import { breakpoints } from '../styles/breakpoints';
 
 const ToolsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
   gap: 25px;
   margin-top: 50px;
   div {
     width: 20%;
+  }
+  ${breakpoints.sm} {
+    justify-content: space-evenly;
   }
 `;
 

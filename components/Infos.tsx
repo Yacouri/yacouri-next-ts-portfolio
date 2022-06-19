@@ -5,6 +5,7 @@ import Circles from '../assets/icons/circles.svg';
 import DoubleTr from '../assets/icons/double_triangle.svg';
 import Stars from '../assets/icons/stars.svg';
 import useTheme from '../hooks/useTheme';
+import { breakpoints } from '../styles/breakpoints';
 
 type BoxProps = {
   fullHeight?: boolean;
@@ -15,6 +16,16 @@ const InfosWrapper = styled.div`
   justify-content: center;
   gap: 20px;
   margin-top: 100px;
+  ${breakpoints.lg} {
+    flex-direction: column;
+    align-items: center;
+  }
+  ${breakpoints.md} {
+    margin: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
 `;
 const StyledBox = styled.div<BoxProps>`
   ${(props) =>
