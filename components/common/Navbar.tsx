@@ -52,7 +52,7 @@ const Box = styled.div`
 
 const Navbar: React.FC = () => {
   const { theme, themeToggler } = useTheme();
-  const [width, setWidth] = useState('0%');
+  const [styles, setStyles] = useState({ width: '0', right: '-100px' });
   return (
     <>
       <NavbarWrapper>
@@ -78,10 +78,10 @@ const Navbar: React.FC = () => {
           ) : (
             <StyledSunIcon size={20} cursor="pointer" onClick={themeToggler} />
           )}
-          <StyledMenuIcon onClick={() => setWidth('100%')} />
+          <StyledMenuIcon onClick={() => setStyles({ width: '100%', right: '0px' })} />
         </Box>
       </NavbarWrapper>
-      <Sidebar width={width} setWidth={setWidth} />
+      <Sidebar styles={styles} setStyles={setStyles} />
     </>
   );
 };

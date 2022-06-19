@@ -1,20 +1,22 @@
 import React from 'react';
 import { X } from 'react-feather';
 import styled from 'styled-components';
+import SidebarMenu from '../SidebarMenu';
 
 type OverlayProps = {
   width: string;
+  right: string;
 };
 type SideBarProps = {
-  width: string;
-  setWidth: React.Dispatch<React.SetStateAction<string>>;
+  styles: OverlayProps;
+  setStyles: React.Dispatch<React.SetStateAction<Record<string, unknown>>>;
 };
 
 const Overlay = styled.div<OverlayProps>`
   position: fixed;
   top: 0;
-  right: -10;
-  width: ${(props) => props.width};
+  right: ${({ right }) => right};
+  width: ${({ width }) => width};
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
@@ -34,11 +36,15 @@ const SidebarWrapper = styled.div`
   }
 `;
 
-const Sidebar = ({ width, setWidth }: SideBarProps) => {
+const Sidebar = ({ styles, setStyles }: SideBarProps) => {
   return (
-    <Overlay width={width} onClick={() => setWidth('0%')}>
+    <Overlay
+      width={styles.width}
+      right={styles.right}
+      onClick={() => setStyles({ width: '0', right: '-100px' })}>
       <SidebarWrapper>
-        <X onClick={() => setWidth('0%')} cursor="pointer" />
+        <X onClick={() => setStyles({ width: '0', right: '-100px' })} cursor="pointer" />
+        <SidebarMenu />
       </SidebarWrapper>
     </Overlay>
   );
