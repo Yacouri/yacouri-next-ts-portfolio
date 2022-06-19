@@ -18,8 +18,12 @@ const ToolsWrapper = styled.div`
   div {
     width: 20%;
   }
-  ${breakpoints.sm} {
+  ${breakpoints.md} {
     justify-content: space-evenly;
+  }
+  ${breakpoints.sm} {
+    justify-content: space-between;
+    gap: 5px;
   }
 `;
 
