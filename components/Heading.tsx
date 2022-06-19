@@ -4,12 +4,9 @@ import styled from 'styled-components';
 import YIcon from './common/IconComponent/Yicon';
 import Shapes from './Shapes';
 import Stars from '../assets/icons/stars.svg';
-import Github from '../assets/icons/github.svg';
-import Twitter from '../assets/icons/twitter.svg';
-import Behance from '../assets/icons/behance.svg';
-import Dribbble from '../assets/icons/dribbble.svg';
 import Magnet from '../assets/icons/magnet.svg';
 import useTheme from '../hooks/useTheme';
+import SocialMediaIcons from './common/SocialMediaIcons';
 
 const HeadingWrapper = styled.div`
   margin-top: 100px;
@@ -42,12 +39,7 @@ const StyledBox = styled.div`
   display: flex;
   gap: 20px;
 `;
-const StyledLinkWrapper = styled.div`
-  border: 1px solid ${({ theme }) => theme.text.primary};
-  svg {
-    fill: ${({ theme }) => theme.text.primary};
-  }
-`;
+
 const StyledLinkButton = styled.button`
   background-color: ${({ theme }) => theme.text.primary};
   color: ${({ theme }) => theme.body};
@@ -86,34 +78,7 @@ const Heading = () => {
         &amp; Ui/Ux <StyledSpan>Designer</StyledSpan>
       </StyledTypography>
       <StyledBox>
-        <StyledLinkWrapper>
-          <Link href="#" passHref>
-            <YIcon>
-              <Twitter fontSize={'2.5rem'} />
-            </YIcon>
-          </Link>
-        </StyledLinkWrapper>
-        <StyledLinkWrapper>
-          <Link href="#" passHref>
-            <YIcon>
-              <Github fontSize={'2.5rem'} />
-            </YIcon>
-          </Link>
-        </StyledLinkWrapper>
-        <StyledLinkWrapper>
-          <Link href="#" passHref>
-            <YIcon>
-              <Behance fontSize={'2.5rem'} />
-            </YIcon>
-          </Link>
-        </StyledLinkWrapper>
-        <StyledLinkWrapper>
-          <Link href="#" passHref>
-            <YIcon>
-              <Dribbble fontSize={'2.5rem'} />
-            </YIcon>
-          </Link>
-        </StyledLinkWrapper>
+        <SocialMediaIcons />
         <Divider />
         <StyledLinkButton>Download C.V</StyledLinkButton>
       </StyledBox>
