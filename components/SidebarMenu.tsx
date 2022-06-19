@@ -4,18 +4,26 @@ import styled from 'styled-components';
 import SocialMediaIcons from './common/SocialMediaIcons';
 import Signature from '../assets/icons/signature.svg';
 import { getYear } from '../utils';
+import { breakpoints } from '../styles/breakpoints';
 
 const MenuWrapper = styled.div`
   padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 60px;
+  ${breakpoints.sm} {
+    padding: 15px;
+    gap: 30px;
+  }
 `;
 const Menu = styled.div``;
 const ManuLabel = styled.label`
   color: ${({ theme }) => theme.text.muted};
   font-size: 1.25rem;
   font-weight: 500;
+  ${breakpoints.sm} {
+    font-size: 1rem;
+  }
 `;
 const MenuItem = styled.li`
   margin: 20px 30px;
@@ -24,9 +32,9 @@ const MenuItem = styled.li`
     font-size: 1.625rem;
     text-decoration: none;
     color: ${({ theme }) => theme.text.primary};
-  }
-  &:nth-child(2) {
-    list-style-type: none;
+    ${breakpoints.sm} {
+      font-size: 1rem;
+    }
   }
 `;
 const SocialMediaWrapper = styled.div`
@@ -39,19 +47,21 @@ const SignatureWrapper = styled.div`
     width: 200px;
     height: 100px;
   }
+  ${breakpoints.sm} {
+    svg {
+      width: 200px;
+      height: 50px;
+    }
+  }
 `;
 const CopyrightMessage = styled.h3`
   color: ${({ theme }) => theme.text.primary};
   font-size: 1rem;
   font-weight: 500;
+  ${breakpoints.sm} {
+    font-size: 0.825rem;
+  }
 `;
-
-// type MessageProps = {
-//   children: React.ReactNode;
-// };
-// const CopyrightMessage = (props: MessageProps) => {
-//   <>{props.children}</>;
-// };
 
 const SidebarMenu = () => {
   return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { X } from 'react-feather';
 import styled from 'styled-components';
+import { breakpoints } from '../../styles/breakpoints';
 import SidebarMenu from '../SidebarMenu';
 
 type OverlayProps = {
@@ -38,6 +39,12 @@ const SidebarWrapper = styled.div`
   z-index: 2;
   svg {
     color: ${({ theme }) => theme.text.primary};
+  }
+  ${breakpoints.lg} {
+    width: 40%;
+  }
+  ${breakpoints.md} {
+    width: 70%;
   }
 `;
 
