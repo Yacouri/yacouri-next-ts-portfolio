@@ -5,10 +5,17 @@ import SectionTitle from './common/SectionTitle';
 import ArticleOne from '../assets/images/article1.png';
 import ArticleTwo from '../assets/images/article2.png';
 import Link from 'next/link';
+import { breakpoints } from '../styles/breakpoints';
 
 const BlogWrapper = styled.div`
   margin: 100px auto;
   width: 60%;
+  ${breakpoints.xl} {
+    width: 80%;
+  }
+  ${breakpoints.md} {
+    width: 90%;
+  }
 `;
 const Box = styled.div`
   display: flex;
@@ -18,15 +25,19 @@ const Box = styled.div`
   > div {
     flex: 0.33;
   }
+  ${breakpoints.md} {
+    flex-direction: column;
+    > div {
+      width: 100%;
+    }
+  }
 `;
 const StyledWrapper = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 25%; */
   flex: 0.3;
-  flex-wrap: wrap;
   background-color: ${({ theme }) => theme.text.primary};
   border: 1px solid ${({ theme }) => theme.text.primary};
   transition: transform 0.3s, background-color 0.3s;
@@ -41,6 +52,9 @@ const StyledWrapper = styled.div`
     p {
       color: ${({ theme }) => theme.text.primary};
     }
+  }
+  ${breakpoints.md} {
+    padding: 12px;
   }
 `;
 

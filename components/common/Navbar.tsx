@@ -59,21 +59,6 @@ const Navbar: React.FC = () => {
     <>
       <NavbarWrapper>
         <LetterMark />
-        {/* <NavList> */}
-        {/* <ListItem>
-          <Link href="#">01.Home</Link>
-        </ListItem>
-        <ListItem>
-          <Link href="#">02.About</Link>
-        </ListItem>
-        <ListItem>
-          <Link href="#">03.Projects</Link>
-        </ListItem>
-        <ListItem>
-          <Link href="#">04.Skills</Link>
-        </ListItem> */}
-        {/* <Separator /> */}
-        {/* </NavList> */}
         <Box>
           {theme === 'light' ? (
             <IconWrapper>
