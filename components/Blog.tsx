@@ -14,12 +14,17 @@ const Box = styled.div`
   display: flex;
   gap: 20px;
   flex: 1;
+  flex-wrap: wrap;
+  > div {
+    flex: 0.33;
+  }
 `;
 const StyledWrapper = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* width: 25%; */
   flex: 0.3;
   flex-wrap: wrap;
   background-color: ${({ theme }) => theme.text.primary};
