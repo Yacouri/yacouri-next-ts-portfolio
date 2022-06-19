@@ -48,6 +48,9 @@ const StyledTitle = styled.h3`
   ${breakpoints.md} {
     font-size: 1.5rem;
   }
+  ${breakpoints.sm} {
+    font-size: 1rem;
+  }
 `;
 
 const BlogCard = ({ img, date, readTime, title, url }: CardProps) => {
