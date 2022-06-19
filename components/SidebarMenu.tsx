@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SocialMediaIcons from './common/SocialMediaIcons';
 import Signature from '../assets/icons/signature.svg';
+import { getYear } from '../utils';
 
 const MenuWrapper = styled.div`
   padding: 30px;
@@ -45,6 +46,13 @@ const CopyrightMessage = styled.h3`
   font-weight: 500;
 `;
 
+// type MessageProps = {
+//   children: React.ReactNode;
+// };
+// const CopyrightMessage = (props: MessageProps) => {
+//   <>{props.children}</>;
+// };
+
 const SidebarMenu = () => {
   return (
     <MenuWrapper>
@@ -84,9 +92,11 @@ const SidebarMenu = () => {
       </Menu>
       <Menu>
         <CopyrightMessage>
-          Copyright © 2022
-          <br />
-          Designed & Developed by Yacouri
+          <>
+            Copyright © <>{getYear()}</>
+            <br />
+            Designed & Developed by Yacouri
+          </>
         </CopyrightMessage>
       </Menu>
     </MenuWrapper>
