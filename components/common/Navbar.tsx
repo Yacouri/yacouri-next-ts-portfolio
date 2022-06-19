@@ -33,11 +33,13 @@ const Separator = styled.div`
   width: 1px;
   background-color: ${({ theme }) => theme.text.muted};
 `;
-const StyledMoonIcon = styled(Moon)`
-  color: ${({ theme }) => theme.text.primary};
-`;
-const StyledSunIcon = styled(Sun)`
-  color: ${({ theme }) => theme.text.primary};
+const IconWrapper = styled.div`
+  svg {
+    color: ${({ theme }) => theme.text.primary};
+    border: 1px solid ${({ theme }) => theme.text.primary};
+    border-radius: 12px;
+    padding: 8px;
+  }
 `;
 const StyledMenuIcon = styled(Menu)`
   cursor: pointer;
@@ -74,9 +76,13 @@ const Navbar: React.FC = () => {
         {/* </NavList> */}
         <Box>
           {theme === 'light' ? (
-            <StyledMoonIcon size={20} cursor="pointer" onClick={themeToggler} />
+            <IconWrapper>
+              <Moon size={20} cursor="pointer" onClick={themeToggler} />
+            </IconWrapper>
           ) : (
-            <StyledSunIcon size={20} cursor="pointer" onClick={themeToggler} />
+            <IconWrapper>
+              <Sun size={20} cursor="pointer" onClick={themeToggler} />
+            </IconWrapper>
           )}
           <StyledMenuIcon onClick={() => setStyles({ width: '100%', right: '0px' })} />
         </Box>

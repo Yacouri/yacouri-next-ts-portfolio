@@ -9,7 +9,12 @@ type OverlayProps = {
 };
 type SideBarProps = {
   styles: OverlayProps;
-  setStyles: React.Dispatch<React.SetStateAction<Record<string, unknown>>>;
+  setStyles: React.Dispatch<
+    React.SetStateAction<{
+      width: string;
+      right: string;
+    }>
+  >;
 };
 
 const Overlay = styled.div<OverlayProps>`
