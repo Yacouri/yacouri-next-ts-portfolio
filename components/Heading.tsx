@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 import YIcon from './common/IconComponent/Yicon';
@@ -7,6 +6,7 @@ import Stars from '../assets/icons/stars.svg';
 import Magnet from '../assets/icons/magnet.svg';
 import useTheme from '../hooks/useTheme';
 import SocialMediaIcons from './common/SocialMediaIcons';
+import { breakpoints } from '../styles/breakpoints';
 
 const HeadingWrapper = styled.div`
   margin-top: 100px;
@@ -17,6 +17,14 @@ const StyledTypography = styled.h1`
   font-weight: 500;
   color: ${({ theme }) => theme.text.primary};
   line-height: 100%;
+  transition: 0.2s;
+  ${breakpoints.md} {
+    font-size: 60px;
+  }
+  ${breakpoints.sm} {
+    font-size: 35px;
+    font-weight: 600;
+  }
 `;
 const StyledSpan = styled.span`
   position: relative;
@@ -30,6 +38,13 @@ const StyledSpan = styled.span`
     background-color: ${({ theme }) => theme.palette.blue['400']};
     opacity: 0.5;
     width: calc(100% - 20px);
+  }
+  ${breakpoints.sm} {
+    &::before {
+      padding: 3px;
+      height: 2px;
+      width: calc(100% - 10px);
+    }
   }
 `;
 const StyledBox = styled.div`
