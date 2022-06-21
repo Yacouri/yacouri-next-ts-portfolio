@@ -6,6 +6,7 @@ import Github from '../../assets/icons/github.svg';
 import Twitter from '../../assets/icons/twitter.svg';
 import Behance from '../../assets/icons/behance.svg';
 import Dribbble from '../../assets/icons/dribbble.svg';
+import { breakpoints } from '../../styles/breakpoints';
 
 type BoxChildProps = {
   flex?: boolean;
@@ -22,6 +23,10 @@ const Box = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
+  ${breakpoints.sm} {
+    width: 90%;
+  }
 `;
 const BoxChild = styled.div<BoxChildProps>`
   p {
@@ -33,6 +38,13 @@ const BoxChild = styled.div<BoxChildProps>`
     display: flex;
     gap: 10px;
   `}
+
+  ${breakpoints.lg} {
+    &:nth-child(2) {
+      order: 3;
+      margin: 20px auto;
+    }
+  }
 `;
 const StyledLinkWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.body};
