@@ -5,6 +5,7 @@ import HalfCircle from '../assets/images/half_circle.png';
 import Triangle from '../assets/images/triang.png';
 import styled from 'styled-components';
 import Pinky from '../assets/images/pinky.png';
+import { breakpoints } from '../styles/breakpoints';
 
 type ImageProps = {
   top?: string | 0;
@@ -25,9 +26,14 @@ const StyledShape = styled.div<ImageProps>`
   left: ${(props) => props.left};
   right: ${(props) => props.right};
   bottom: ${(props) => props.bottom};
+  ${breakpoints.sm} {
+    img {
+      width: 50px !important;
+    }
+  }
 `;
 
-const Shapes: React.FC = () => {
+const Shapes = () => {
   return (
     <>
       <ShapesWrapper>
