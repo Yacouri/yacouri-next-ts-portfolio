@@ -53,6 +53,9 @@ const StyledBox = styled.div`
   justify-content: center;
   display: flex;
   gap: 20px;
+  ${breakpoints.sm} {
+    flex-direction: column;
+  }
 `;
 
 const StyledLinkButton = styled.button`
@@ -72,6 +75,9 @@ const Divider = styled.div`
   height: 20px;
   background-color: ${({ theme }) => theme.text.primary};
   width: 2px;
+  ${breakpoints.sm} {
+    display: none;
+  }
 `;
 const ImageWrapper = styled.div`
   margin-top: 100px;

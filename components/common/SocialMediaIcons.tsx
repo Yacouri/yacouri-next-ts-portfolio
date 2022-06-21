@@ -13,10 +13,14 @@ const StyledLinkWrapper = styled.div`
     fill: ${({ theme }) => theme.text.primary};
   }
 `;
+const Box = styled.div`
+  display: flex;
+  gap: 10px;
+`;
 
 const SocialMediaIcons = () => {
   return (
-    <>
+    <Box>
       <StyledLinkWrapper>
         <Link href="#" passHref>
           <YIcon>
@@ -45,7 +49,7 @@ const SocialMediaIcons = () => {
           </YIcon>
         </Link>
       </StyledLinkWrapper>
-    </>
+    </Box>
   );
 };
 
