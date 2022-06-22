@@ -41,6 +41,7 @@ const Box = styled.div`
     flex: 1 0 25%;
   }
   ${breakpoints.md} {
+    margin-top: 50px;
     flex-wrap: nowrap;
     flex-direction: column;
   }
