@@ -4,10 +4,15 @@ import Circles from '../../assets/icons/circles.svg';
 import ArticleOne from '../../assets/images/article1.png';
 import ArticleTwo from '../../assets/images/article2.png';
 import BlogCard from '../../components/BlogCard';
+import { breakpoints } from '../../styles/breakpoints';
 
 const BlogWrapper = styled.div`
   width: 60%;
   margin: 100px auto;
+  transition: width 0.2s;
+  ${breakpoints.sm} {
+    width: 80%;
+  }
 `;
 const HeaderWrapper = styled.div`
   display: flex;
@@ -30,7 +35,15 @@ const Box = styled.div`
   margin-top: 100px;
   display: flex;
   gap: 20px;
-  /* max-width: 60%; */
+  flex: 1;
+  flex-wrap: wrap;
+  > div {
+    flex: 1 0 25%;
+  }
+  ${breakpoints.md} {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
 `;
 
 const index = () => {
