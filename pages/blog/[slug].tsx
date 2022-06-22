@@ -2,11 +2,15 @@ import Link from 'next/link';
 import React from 'react';
 import { ArrowLeft } from 'react-feather';
 import styled from 'styled-components';
+import { breakpoints } from '../../styles/breakpoints';
 // import { ArticleContent } from '../../styles/globalStyles';
 
 const ArticleWrapper = styled.div`
   max-width: 1000px;
   margin: 10% auto;
+  ${breakpoints.lg} {
+    margin: 100px 30px;
+  }
 `;
 const StyledArrowIcon = styled(ArrowLeft)`
   margin-right: 15px;
@@ -35,6 +39,10 @@ const ArticleTitle = styled.h1`
   color: ${({ theme }) => theme.text.primary};
   font-size: 35px;
   font-weight: 700;
+  transition: font-size 0.3s;
+  ${breakpoints.sm} {
+    font-size: 25px;
+  }
 `;
 const ArticleTimeStamp = styled.div`
   color: ${({ theme }) => theme.text.muted};
