@@ -46,6 +46,7 @@ const SignatureWrapper = styled.div`
   svg {
     width: 200px;
     height: 100px;
+    stroke: ${({ theme }) => theme.text.primary};
   }
   ${breakpoints.sm} {
     svg {

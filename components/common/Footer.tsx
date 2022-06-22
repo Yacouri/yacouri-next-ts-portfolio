@@ -49,7 +49,7 @@ const BoxChild = styled.div<BoxChildProps>`
 const StyledLinkWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.body};
   svg {
-    stroke: ${({ theme }) => theme.body};
+    fill: ${({ theme }) => theme.body};
   }
 `;
 const StyledTitle = styled.h1`
