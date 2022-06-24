@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle<GlobalThemeProps>`
 `;
 
 export const ArticleContent = styled.div`
+  color: ${({ theme }) => theme.text.primary};
   font-size: 21px;
   line-height: 32px;
   img {
@@ -123,7 +124,6 @@ export const ArticleContent = styled.div`
 
   pre {
     overflow: auto;
-
     margin: 0.75rem 0;
     padding: 0.5rem;
     font-size: 0.875em;
@@ -152,6 +152,7 @@ export const ArticleContent = styled.div`
   pre tt {
     background-color: transparent;
     border: none;
+    color: ${({ theme }) => theme.text.muted};
   }
 
   table {

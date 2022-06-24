@@ -4,7 +4,8 @@ import { ArrowLeft } from 'react-feather';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
 import { getArticle, getArticles } from '../../utils';
-// import { ArticleContent } from '../../styles/globalStyles';
+import { ArticleContent } from '../../styles/globalStyles';
+import ReactMarkdown from 'react-markdown';
 
 const ArticleWrapper = styled.div`
   max-width: 1000px;
@@ -77,10 +78,9 @@ const Article = ({ data }) => {
         <span>-</span>
         <span>2 mins</span>
       </ArticleTimeStamp>
-      {/* <ArticleContent
-        className="article-content"
-        dangerouslySetInnerHTML={{ __html: attributes.content }}
-      /> */}
+      <ArticleContent>
+        <ReactMarkdown children={attributes.content} />
+      </ArticleContent>
     </ArticleWrapper>
   );
 };
