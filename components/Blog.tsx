@@ -84,7 +84,8 @@ const Blog = ({ blogs }: IBlogs) => {
         date={item.attributes.date}
         readTime="4 mins"
         title={item.attributes.title}
-        url={item.attributes.title.split(' ').join('-').toLowerCase()}
+        // url={item.attributes.title.split(' ').join('-').toLowerCase()}
+        url={`/blog/${item.id}`}
       />
     </>
   ));

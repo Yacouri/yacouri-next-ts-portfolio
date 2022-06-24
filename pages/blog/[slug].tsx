@@ -3,6 +3,7 @@ import React from 'react';
 import { ArrowLeft } from 'react-feather';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
+import { getArticle, getArticles } from '../../utils';
 // import { ArticleContent } from '../../styles/globalStyles';
 
 const ArticleWrapper = styled.div`
@@ -53,7 +54,8 @@ const ArticleTimeStamp = styled.div`
   }
 `;
 
-const Article = () => {
+const Article = ({ data }) => {
+  const { attributes } = data;
   return (
     <ArticleWrapper>
       <BackLink>
@@ -69,15 +71,33 @@ const Article = () => {
         alt=""
       />
       <ArticleLabel>Title</ArticleLabel>
-      <ArticleTitle>The easiest way to make a glass effect in CSS 💎.</ArticleTitle>
+      <ArticleTitle>{attributes.title}</ArticleTitle>
       <ArticleTimeStamp>
-        <span>Aug 5, 2021</span>
+        <span>{attributes.date}</span>
         <span>-</span>
         <span>2 mins</span>
       </ArticleTimeStamp>
-      {/* <ArticleContent className="article-content" dangerouslySetInnerHTML={{ __html: null }} /> */}
+      {/* <ArticleContent
+        className="article-content"
+        dangerouslySetInnerHTML={{ __html: attributes.content }}
+      /> */}
     </ArticleWrapper>
   );
 };
 
 export default Article;
+
+export const getStaticProps = async ({ params }) => {
+  const data = await getArticle(params.slug);
+  return {
+    props: data
+  };
+};
+
+export const getStaticPaths = async () => {
+  const articles = await getArticles();
+  return {
+    paths: articles.data.map((item) => `/blog/${item.id}`),
+    fallback: false
+  };
+};
