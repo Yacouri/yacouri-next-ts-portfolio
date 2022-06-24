@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import BlogCard from './BlogCard';
 import SectionTitle from './common/SectionTitle';
 import ArticleOne from '../assets/images/article1.png';
-import ArticleTwo from '../assets/images/article2.png';
+// import ArticleTwo from '../assets/images/article2.png';
 import Link from 'next/link';
 import { breakpoints } from '../styles/breakpoints';
+
+interface IBlogs {
+  blogs: [];
+}
 
 const BlogWrapper = styled.div`
   margin: 100px auto;
@@ -63,7 +67,7 @@ const StyledWrapper = styled.div`
 
 const MoreBlogs = () => {
   return (
-    <Link href="#">
+    <Link href="/blog">
       <StyledWrapper>
         <p>See more...</p>
       </StyledWrapper>
@@ -71,25 +75,24 @@ const MoreBlogs = () => {
   );
 };
 
-const Blog = () => {
+const Blog = ({ blogs }: IBlogs) => {
+  const renderBlogs = blogs.slice(1).map((item) => (
+    <>
+      <BlogCard
+        key={item.id}
+        img={ArticleOne.src}
+        date={item.attributes.date}
+        readTime="4 mins"
+        title={item.attributes.title}
+        url={item.attributes.title.split(' ').join('-').toLowerCase()}
+      />
+    </>
+  ));
   return (
     <BlogWrapper>
       <SectionTitle title="Blog" />
       <Box>
-        <BlogCard
-          img={ArticleOne.src}
-          date="Jul 25, 2021"
-          readTime="4 mins"
-          title="ReactJS folder structure + Boilerplate."
-          url="#"
-        />
-        <BlogCard
-          img={ArticleTwo.src}
-          date="Jul 25, 2021"
-          readTime="4 mins"
-          title="The easiest way to make a glass effect in CSS 💎"
-          url="#"
-        />
+        {renderBlogs}
         <MoreBlogs />
       </Box>
     </BlogWrapper>

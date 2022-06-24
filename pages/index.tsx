@@ -4,8 +4,12 @@ import Blog from '../components/Blog';
 import Contact from '../components/Contact';
 import Heading from '../components/Heading';
 import Infos from '../components/Infos';
+import { getArticles } from '../utils';
 
-const Home: NextPage = () => {
+interface IResponse {
+  data: [];
+}
+const Home: NextPage<IResponse> = ({ data }) => {
   return (
     <div>
       <Head>
@@ -15,10 +19,17 @@ const Home: NextPage = () => {
       </Head>
       <Heading />
       <Infos />
-      <Blog />
+      <Blog blogs={data} />
       <Contact />
     </div>
   );
 };
 
 export default Home;
+
+export const getServerSideProps = async () => {
+  const data = getArticles();
+  return {
+    props: data
+  };
+};
