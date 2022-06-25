@@ -5,6 +5,7 @@ import ArticleOne from '../../assets/images/article1.png';
 import ArticleTwo from '../../assets/images/article2.png';
 import BlogCard from '../../components/BlogCard';
 import { breakpoints } from '../../styles/breakpoints';
+import { getArticles } from '../../utils';
 
 const BlogWrapper = styled.div`
   width: 60%;
@@ -47,7 +48,19 @@ const Box = styled.div`
   }
 `;
 
-const index = () => {
+const index = ({ data }) => {
+  const renderBlogs = data.map((item) => (
+    <>
+      <BlogCard
+        key={item.id}
+        img={ArticleOne.src}
+        date={item.attributes.date}
+        readTime="4 mins"
+        title={item.attributes.title}
+        url={`/blog/${item.attributes.slug}`}
+      />
+    </>
+  ));
   return (
     <BlogWrapper>
       <HeaderWrapper>
@@ -56,45 +69,16 @@ const index = () => {
           Personal <br /> Blog
         </StyledTitle>
       </HeaderWrapper>
-      <Box>
-        <BlogCard
-          img={ArticleOne.src}
-          date="Jul 25, 2021"
-          readTime="4 mins"
-          title="ReactJS folder structure + Boilerplate."
-          url="#"
-        />
-        <BlogCard
-          img={ArticleTwo.src}
-          date="Jul 25, 2021"
-          readTime="4 mins"
-          title="The easiest way to make a glass effect in CSS 💎"
-          url="#"
-        />
-        <BlogCard
-          img={ArticleTwo.src}
-          date="Jul 25, 2021"
-          readTime="4 mins"
-          title="The easiest way to make a glass effect in CSS 💎"
-          url="#"
-        />
-        <BlogCard
-          img={ArticleTwo.src}
-          date="Jul 25, 2021"
-          readTime="4 mins"
-          title="The easiest way to make a glass effect in CSS 💎"
-          url="#"
-        />
-        <BlogCard
-          img={ArticleTwo.src}
-          date="Jul 25, 2021"
-          readTime="4 mins"
-          title="The easiest way to make a glass effect in CSS 💎"
-          url="#"
-        />
-      </Box>
+      <Box>{renderBlogs}</Box>
     </BlogWrapper>
   );
 };
 
 export default index;
+
+export const getStaticProps = async () => {
+  const data = await getArticles();
+  return {
+    props: data
+  };
+};
