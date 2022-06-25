@@ -12,8 +12,8 @@ export const getArticles = () => {
   });
 };
 
-export const getArticle = (id: number) => {
-  return axios.get(`${API_URL}/api/articles/${id}`).then(({ data }) => {
+export const getArticle = (slug: string) => {
+  return axios.get(`${API_URL}/api/articles/${slug}`).then(({ data }) => {
     return data;
   });
 };

@@ -27,8 +27,8 @@ const Home: NextPage<IResponse> = ({ data }) => {
 
 export default Home;
 
-export const getServerSideProps = async () => {
-  const data = getArticles();
+export const getStaticProps = async () => {
+  const data = await getArticles();
   return {
     props: data
   };

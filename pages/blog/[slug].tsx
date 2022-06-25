@@ -89,6 +89,7 @@ export default Article;
 
 export const getStaticProps = async ({ params }) => {
   const data = await getArticle(params.slug);
+
   return {
     props: data
   };
@@ -96,8 +97,9 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const articles = await getArticles();
+
   return {
-    paths: articles.data.map((item) => `/blog/${item.id}`),
+    paths: articles.data.map((item) => `/blog/${item.attributes.slug}`),
     fallback: false
   };
 };
