@@ -1,9 +1,11 @@
+import Head from 'next/head';
 import React from 'react';
 import styled from 'styled-components';
 import Circles from '../../assets/icons/circles.svg';
 import ArticleOne from '../../assets/images/article1.png';
 import ArticleTwo from '../../assets/images/article2.png';
 import BlogCard from '../../components/BlogCard';
+import SEO from '../../components/common/SEO';
 import { breakpoints } from '../../styles/breakpoints';
 import { getArticles } from '../../utils';
 
@@ -62,15 +64,21 @@ const index = ({ data }) => {
     </>
   ));
   return (
-    <BlogWrapper>
-      <HeaderWrapper>
-        <Circles />
-        <StyledTitle>
-          Personal <br /> Blog
-        </StyledTitle>
-      </HeaderWrapper>
-      <Box>{renderBlogs}</Box>
-    </BlogWrapper>
+    <>
+      <SEO
+        title="Blog"
+        description="Sometimes i write Articles and Stories about my routine, coding, design etc ..."
+      />
+      <BlogWrapper>
+        <HeaderWrapper>
+          <Circles />
+          <StyledTitle>
+            Personal <br /> Blog
+          </StyledTitle>
+        </HeaderWrapper>
+        <Box>{renderBlogs}</Box>
+      </BlogWrapper>
+    </>
   );
 };
 

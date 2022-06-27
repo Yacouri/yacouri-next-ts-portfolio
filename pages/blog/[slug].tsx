@@ -6,6 +6,7 @@ import { breakpoints } from '../../styles/breakpoints';
 import { getArticle, getArticles } from '../../utils';
 import { ArticleContent } from '../../styles/globalStyles';
 import ReactMarkdown from 'react-markdown';
+import SEO from '../../components/common/SEO';
 
 const ArticleWrapper = styled.div`
   max-width: 1000px;
@@ -58,30 +59,33 @@ const ArticleTimeStamp = styled.div`
 const Article = ({ data }) => {
   const { attributes } = data;
   return (
-    <ArticleWrapper>
-      <BackLink>
-        <Link href="/blog" passHref>
-          <a>
-            <StyledArrowIcon />
-            <span>Back to articles</span>
-          </a>
-        </Link>
-      </BackLink>
-      <ArticleImage
-        src="https://www.yacouri.com/static/5b41bac35273a8f267e13d79169b1c9c/ee604/css-glass-effect-tutorial-banner.png"
-        alt=""
-      />
-      <ArticleLabel>Title</ArticleLabel>
-      <ArticleTitle>{attributes.title}</ArticleTitle>
-      <ArticleTimeStamp>
-        <span>{attributes.date}</span>
-        <span>-</span>
-        <span>2 mins</span>
-      </ArticleTimeStamp>
-      <ArticleContent>
-        <ReactMarkdown children={attributes.content} />
-      </ArticleContent>
-    </ArticleWrapper>
+    <>
+      <SEO title={attributes.title} description={attributes.title} />
+      <ArticleWrapper>
+        <BackLink>
+          <Link href="/blog" passHref>
+            <a>
+              <StyledArrowIcon />
+              <span>Back to articles</span>
+            </a>
+          </Link>
+        </BackLink>
+        <ArticleImage
+          src="https://www.yacouri.com/static/5b41bac35273a8f267e13d79169b1c9c/ee604/css-glass-effect-tutorial-banner.png"
+          alt=""
+        />
+        <ArticleLabel>Title</ArticleLabel>
+        <ArticleTitle>{attributes.title}</ArticleTitle>
+        <ArticleTimeStamp>
+          <span>{attributes.date}</span>
+          <span>-</span>
+          <span>2 mins</span>
+        </ArticleTimeStamp>
+        <ArticleContent>
+          <ReactMarkdown children={attributes.content} />
+        </ArticleContent>
+      </ArticleWrapper>
+    </>
   );
 };
 
