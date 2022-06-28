@@ -11,6 +11,7 @@ import { getArticles } from '../../utils';
 
 const BlogWrapper = styled.div`
   width: 60%;
+  min-height: 80vh;
   margin: 100px auto;
   transition: width 0.2s;
   ${breakpoints.sm} {

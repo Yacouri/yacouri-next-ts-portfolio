@@ -70,16 +70,16 @@ const SidebarMenu = () => {
       <Menu>
         <ManuLabel>Menu</ManuLabel>
         <MenuItem>
-          <Link href="#">Home</Link>
+          <Link href="#home">Home</Link>
         </MenuItem>
         <MenuItem>
-          <Link href="#">About</Link>
+          <Link href="#about">About</Link>
         </MenuItem>
         <MenuItem>
-          <Link href="#">Skills</Link>
+          <Link href="#about">Skills</Link>
         </MenuItem>
         <MenuItem>
-          <Link href="#">Project</Link>
+          <Link href="/blog">Blog</Link>
         </MenuItem>
       </Menu>
       <Menu>
