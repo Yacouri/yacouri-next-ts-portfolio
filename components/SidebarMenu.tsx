@@ -70,13 +70,13 @@ const SidebarMenu = () => {
       <Menu>
         <ManuLabel>Menu</ManuLabel>
         <MenuItem>
-          <Link href="#home">Home</Link>
+          <Link href="/#home">Home</Link>
         </MenuItem>
         <MenuItem>
-          <Link href="#about">About</Link>
+          <Link href="/#about">About</Link>
         </MenuItem>
         <MenuItem>
-          <Link href="#about">Skills</Link>
+          <Link href="/#about">Skills</Link>
         </MenuItem>
         <MenuItem>
           <Link href="/blog">Blog</Link>
@@ -85,7 +85,7 @@ const SidebarMenu = () => {
       <Menu>
         <ManuLabel>Say Hello</ManuLabel>
         <MenuItem>
-          <Link href="#">co.yacouri@gmail.com</Link>
+          <Link href="mailto:co.yacouri@gmail.com">co.yacouri@gmail.com</Link>
         </MenuItem>
       </Menu>
       <Menu>

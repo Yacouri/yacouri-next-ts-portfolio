@@ -10,6 +10,9 @@ export const GlobalStyle = createGlobalStyle<GlobalThemeProps>`
     margin: 0;
     padding: 0;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     font-family: 'Raleway', sans-serif;
     background-color: ${({ theme }) => theme.body};

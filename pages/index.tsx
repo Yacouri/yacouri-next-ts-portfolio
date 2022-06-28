@@ -16,10 +16,16 @@ const Home: NextPage<IResponse> = ({ data }) => {
         description="I'm Zouhir Yaçouri AKA YACOURI, a front end web developer & self-taught Ui/Ux designer as well."
         title="Home"
       />
-      <Heading />
-      <Infos />
+      <div id="home">
+        <Heading />
+      </div>
+      <div id="about">
+        <Infos />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
       <Blog blogs={data} />
-      <Contact />
     </div>
   );
 };
