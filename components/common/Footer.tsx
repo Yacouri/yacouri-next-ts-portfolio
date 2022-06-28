@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 import YIcon from './IconComponent/Yicon';
@@ -7,6 +6,7 @@ import Twitter from '../../assets/icons/twitter.svg';
 import Behance from '../../assets/icons/behance.svg';
 import Dribbble from '../../assets/icons/dribbble.svg';
 import { breakpoints } from '../../styles/breakpoints';
+import { getYear, siteInfos } from '../../utils';
 
 type BoxChildProps = {
   flex?: boolean;
@@ -47,6 +47,7 @@ const BoxChild = styled.div<BoxChildProps>`
   }
 `;
 const StyledLinkWrapper = styled.div`
+  cursor: pointer;
   border: 1px solid ${({ theme }) => theme.body};
   svg {
     fill: ${({ theme }) => theme.body};
@@ -65,36 +66,36 @@ const Footer = () => {
           <StyledTitle>Yacouri</StyledTitle>
         </BoxChild>
         <BoxChild>
-          <p>Copyright © 2022 Designed &amp; Developed by Yacouri</p>
+          <p>Copyright © {getYear()} Designed &amp; Developed by Yacouri</p>
         </BoxChild>
         <BoxChild flex>
           <StyledLinkWrapper>
-            <Link href="#" passHref>
+            <a href={siteInfos.media.twitter} target="_blank" rel="noreferrer">
               <YIcon>
                 <Twitter fontSize={'2rem'} />
               </YIcon>
-            </Link>
+            </a>
           </StyledLinkWrapper>
           <StyledLinkWrapper>
-            <Link href="#" passHref>
+            <a href={siteInfos.media.github} target="_blank" rel="noreferrer">
               <YIcon>
                 <Github fontSize={'2rem'} />
               </YIcon>
-            </Link>
+            </a>
           </StyledLinkWrapper>
           <StyledLinkWrapper>
-            <Link href="#" passHref>
+            <a href={siteInfos.media.behance} target="_blank" rel="noreferrer">
               <YIcon>
                 <Behance fontSize={'2rem'} />
               </YIcon>
-            </Link>
+            </a>
           </StyledLinkWrapper>
           <StyledLinkWrapper>
-            <Link href="#" passHref>
+            <a href={siteInfos.media.dribbble} target="_blank" rel="noreferrer">
               <YIcon>
                 <Dribbble fontSize={'2rem'} />
               </YIcon>
-            </Link>
+            </a>
           </StyledLinkWrapper>
         </BoxChild>
       </Box>
