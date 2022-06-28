@@ -23,7 +23,7 @@ const Overlay = styled.div<OverlayProps>`
   top: 0;
   right: ${({ right }) => right};
   width: ${({ width }) => width};
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   transition: width 0.3s ease-in-out;

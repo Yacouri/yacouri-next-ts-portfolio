@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import LetterMark from '../LetterMark';
 import { Sun, Moon } from 'react-feather';
@@ -6,6 +6,14 @@ import Menu from '../../assets/icons/menu.svg';
 import useTheme from '../../hooks/useTheme';
 import Sidebar from './Sidebar';
 
+const BluryWrapper = styled.div`
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  z-index: 1;
+`;
 const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -35,8 +43,9 @@ const Box = styled.div`
 const Navbar: React.FC = () => {
   const { theme, themeToggler } = useTheme();
   const [styles, setStyles] = useState({ width: '0', right: '-100px' });
+
   return (
-    <>
+    <BluryWrapper>
       <NavbarWrapper>
         <LetterMark />
         <Box>
@@ -53,7 +62,7 @@ const Navbar: React.FC = () => {
         </Box>
       </NavbarWrapper>
       <Sidebar styles={styles} setStyles={setStyles} />
-    </>
+    </BluryWrapper>
   );
 };
 
