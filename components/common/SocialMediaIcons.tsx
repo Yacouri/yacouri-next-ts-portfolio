@@ -13,6 +13,10 @@ const StyledLinkWrapper = styled.div`
   svg {
     fill: ${({ theme }) => theme.text.primary};
   }
+  transition: transform 0.3s;
+  &:hover {
+    transform: rotate(-6deg);
+  }
 `;
 const Box = styled.div`
   display: flex;

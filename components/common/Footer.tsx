@@ -52,6 +52,10 @@ const StyledLinkWrapper = styled.div`
   svg {
     fill: ${({ theme }) => theme.body};
   }
+  transition: transform 0.3s;
+  &:hover {
+    transform: rotate(-6deg);
+  }
 `;
 const StyledTitle = styled.h1`
   color: ${({ theme }) => theme.body};
