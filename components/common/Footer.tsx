@@ -7,6 +7,7 @@ import Behance from '../../assets/icons/behance.svg';
 import Dribbble from '../../assets/icons/dribbble.svg';
 import { breakpoints } from '../../styles/breakpoints';
 import { getYear, siteInfos } from '../../utils';
+import Link from 'next/link';
 
 type BoxChildProps = {
   flex?: boolean;
@@ -60,6 +61,14 @@ const StyledLinkWrapper = styled.div`
 const StyledTitle = styled.h1`
   color: ${({ theme }) => theme.body};
   font-size: 1.5rem;
+  transition: transform 0.2s;
+  &:hover {
+    transform: rotate(-3deg);
+  }
+  a {
+    color: ${({ theme }) => theme.body};
+    text-decoration: none;
+  }
 `;
 
 const Footer = () => {
@@ -67,7 +76,9 @@ const Footer = () => {
     <FooterWrapper>
       <Box>
         <BoxChild>
-          <StyledTitle>Yacouri</StyledTitle>
+          <StyledTitle>
+            <Link href="/">Yacouri</Link>
+          </StyledTitle>
         </BoxChild>
         <BoxChild>
           <p>Copyright © {getYear()} Designed &amp; Developed by Yacouri</p>
