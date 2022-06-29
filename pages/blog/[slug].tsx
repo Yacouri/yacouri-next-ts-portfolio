@@ -9,10 +9,13 @@ import ReactMarkdown from 'react-markdown';
 import SEO from '../../components/common/SEO';
 
 const ArticleWrapper = styled.div`
-  max-width: 1000px;
+  max-width: 800px;
   margin: 10% auto;
   ${breakpoints.lg} {
     margin: 100px 30px;
+  }
+  ${breakpoints.sm} {
+    margin-top: 150px;
   }
 `;
 const StyledArrowIcon = styled(ArrowLeft)`
@@ -28,10 +31,10 @@ const BackLink = styled.div`
     text-decoration: none;
   }
 `;
-const ArticleImage = styled.img`
-  width: 100%;
-  border-radius: 8px;
-`;
+// const ArticleImage = styled.img`
+//   width: 100%;
+//   border-radius: 8px;
+// `;
 const ArticleLabel = styled.p`
   margin-top: 30px;
   color: ${({ theme }) => theme.text.muted};
@@ -40,11 +43,11 @@ const ArticleLabel = styled.p`
 `;
 const ArticleTitle = styled.h1`
   color: ${({ theme }) => theme.text.primary};
-  font-size: 35px;
+  font-size: 60px;
   font-weight: 700;
   transition: font-size 0.3s;
   ${breakpoints.sm} {
-    font-size: 25px;
+    font-size: 30px;
   }
 `;
 const ArticleTimeStamp = styled.div`
