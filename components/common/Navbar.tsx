@@ -10,7 +10,7 @@ const BluryWrapper = styled.div`
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(255, 255, 255, 0.15);
+  background: ${({ theme }) => theme.palette.menu};
   backdrop-filter: blur(15px);
   z-index: 1;
 `;

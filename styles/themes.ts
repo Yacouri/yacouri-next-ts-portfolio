@@ -32,7 +32,8 @@ const lightMode: IThemeProps = {
       '600': '#83FF9E',
       gradient: 'linear-gradient(180deg, #CFFFC4 0%, #83FF9E 100%)'
     },
-    red: { '400': '#FF8F8F', '600': '#FE5A5A' }
+    red: { '400': '#FF8F8F', '600': '#FE5A5A' },
+    menu: 'rgba(255,255,255, 0.5)'
   }
 };
 
@@ -60,7 +61,8 @@ const darkMode: IThemeProps = {
       '600': '#83FF9E',
       gradient: 'linear-gradient(180deg, #CFFFC4 0%, #83FF9E 100%)'
     },
-    red: { '400': '#FF8F8F', '600': '#FE5A5A' }
+    red: { '400': '#FF8F8F', '600': '#FE5A5A' },
+    menu: 'rgba(0,0,0, 0.5)'
   }
 };
 
