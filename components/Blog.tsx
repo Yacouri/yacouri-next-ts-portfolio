@@ -78,9 +78,10 @@ const MoreBlogs = () => {
 const Blog = ({ blogs }: IBlogs) => {
   const renderBlogs = blogs.slice(1).map((item) => (
     <>
+      {console.log(11, item)},
       <BlogCard
         key={item.id}
-        img={ArticleOne.src}
+        img={item.attributes.coverUrl}
         date={item.attributes.date}
         readTime="4 mins"
         title={item.attributes.title}

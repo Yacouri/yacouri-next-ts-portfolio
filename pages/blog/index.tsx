@@ -56,7 +56,7 @@ const index = ({ data }) => {
     <>
       <BlogCard
         key={item.id}
-        img={ArticleOne.src}
+        img={item.attributes.coverUrl}
         date={item.attributes.date}
         readTime="4 mins"
         title={item.attributes.title}

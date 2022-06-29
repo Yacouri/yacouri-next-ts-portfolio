@@ -70,10 +70,11 @@ const Article = ({ data }) => {
             </a>
           </Link>
         </BackLink>
-        <ArticleImage
-          src="https://www.yacouri.com/static/5b41bac35273a8f267e13d79169b1c9c/ee604/css-glass-effect-tutorial-banner.png"
+        {/* <ArticleImage
+          // src="https://www.yacouri.com/static/5b41bac35273a8f267e13d79169b1c9c/ee604/css-glass-effect-tutorial-banner.png"
+          src={attributes.coverUrl}
           alt=""
-        />
+        /> */}
         <ArticleLabel>Title</ArticleLabel>
         <ArticleTitle>{attributes.title}</ArticleTitle>
         <ArticleTimeStamp>
