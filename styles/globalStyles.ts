@@ -145,6 +145,7 @@ export const ArticleContent = styled.div`
     background-color: #f8f8f8;
     border: 1px solid #ccc;
     border-radius: 3px;
+    color: #333;
   }
 
   pre code {
