@@ -25,7 +25,9 @@ export const ArticleContent = styled.div`
   font-size: 21px;
   line-height: 32px;
   img {
-    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
   }
   h1,
   h2,
