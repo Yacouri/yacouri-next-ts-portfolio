@@ -40,7 +40,7 @@ const Box = styled.div`
   align-items: center;
 `;
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const { theme, themeToggler } = useTheme();
   const [styles, setStyles] = useState({ width: '0', right: '-100px' });
 

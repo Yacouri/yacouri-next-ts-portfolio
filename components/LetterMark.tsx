@@ -18,7 +18,7 @@ const StyledTitle = styled.h1`
   }
 `;
 
-const LetterMark: React.FC = () => {
+const LetterMark = () => {
   return (
     <StyledTitle>
       <Link href="/">Yacouri</Link>
