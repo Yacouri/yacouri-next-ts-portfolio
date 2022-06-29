@@ -23,9 +23,9 @@ const SubTitle = styled.h2`
 `;
 const Caption = styled.p`
   color: ${({ theme }) => theme.text.primary};
-  margin-top: 20px;
+  margin: 20px 0 40px 0px;
 `;
-const StyledButton = styled.button`
+const StyledButton = styled.a`
   background-color: ${({ theme }) => theme.text.primary};
   color: ${({ theme }) => theme.body};
   cursor: pointer;
@@ -37,7 +37,7 @@ const StyledButton = styled.button`
   transition: all 0.2s ease 0s;
   box-shadow: rgb(0 0 0 / 25%) 0px 4px 10px;
   padding: 15px 30px;
-  margin-top: 20px;
+  margin-top: 40px;
 `;
 
 const Contact = () => {
@@ -54,7 +54,7 @@ const Contact = () => {
         & increase your client base
         <br />
       </Caption>
-      <StyledButton>Get in touch</StyledButton>
+      <StyledButton href="mailto:co.yacouri@gmail.com">Get in touch</StyledButton>
     </ContactWrapper>
   );
 };
