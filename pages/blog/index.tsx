@@ -1,9 +1,6 @@
-import Head from 'next/head';
 import React from 'react';
 import styled from 'styled-components';
 import Circles from '../../assets/icons/circles.svg';
-import ArticleOne from '../../assets/images/article1.png';
-import ArticleTwo from '../../assets/images/article2.png';
 import BlogCard from '../../components/BlogCard';
 import SEO from '../../components/common/SEO';
 import { breakpoints } from '../../styles/breakpoints';

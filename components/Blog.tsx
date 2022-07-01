@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import BlogCard from './BlogCard';
 import SectionTitle from './common/SectionTitle';
-import ArticleOne from '../assets/images/article1.png';
-// import ArticleTwo from '../assets/images/article2.png';
 import Link from 'next/link';
 import { breakpoints } from '../styles/breakpoints';
 

@@ -86,7 +86,7 @@ const Article = ({ data }: any) => {
           <span>2 mins</span>
         </ArticleTimeStamp>
         <ArticleContent>
-          <ReactMarkdown children={attributes.content} />
+          <ReactMarkdown>{attributes.content}</ReactMarkdown>
         </ArticleContent>
       </ArticleWrapper>
     </>
