@@ -8,7 +8,6 @@ import { darkMode, lightMode } from '../styles/themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useTheme();
-  console.log(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS);
   return (
     <ThemeProvider theme={theme === 'light' ? lightMode : darkMode}>
       <Script
