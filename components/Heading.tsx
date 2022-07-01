@@ -9,7 +9,7 @@ import SocialMediaIcons from './common/SocialMediaIcons';
 import { breakpoints } from '../styles/breakpoints';
 
 const HeadingWrapper = styled.div`
-  margin-top: 100px;
+  margin-top: 200px;
   text-align: center;
 `;
 const StyledTypography = styled.h1`
@@ -58,7 +58,7 @@ const StyledBox = styled.div`
   }
 `;
 
-const StyledLinkButton = styled.button`
+const StyledLinkButton = styled.a`
   background-color: ${({ theme }) => theme.text.primary};
   color: ${({ theme }) => theme.body};
   cursor: pointer;
@@ -88,6 +88,8 @@ const ImageWrapper = styled.div`
 
 const Heading = () => {
   const { mode } = useTheme();
+  const downloadUrl =
+    'https://strapi-yacouri-blog.herokuapp.com/uploads/Zouhir_Yacouri_CV_7473e22293.pdf?updated_at=2022-07-01T21:07:03.172Z';
   return (
     <HeadingWrapper>
       <Shapes />
@@ -101,7 +103,9 @@ const Heading = () => {
       <StyledBox>
         <SocialMediaIcons />
         <Divider />
-        <StyledLinkButton>Download C.V</StyledLinkButton>
+        <StyledLinkButton href={downloadUrl} target="_blank">
+          View Resume
+        </StyledLinkButton>
       </StyledBox>
 
       <ImageWrapper>
