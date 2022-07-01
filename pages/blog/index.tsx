@@ -51,8 +51,8 @@ const Box = styled.div`
   }
 `;
 
-const index = ({ data }) => {
-  const renderBlogs = data.map((item) => (
+const index = ({ data }: any) => {
+  const renderBlogs = data.map((item: any) => (
     <>
       <BlogCard
         key={item.id}

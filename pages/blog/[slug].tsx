@@ -59,7 +59,7 @@ const ArticleTimeStamp = styled.div`
   }
 `;
 
-const Article = ({ data }) => {
+const Article = ({ data }: any) => {
   const { attributes } = data;
   return (
     <>
@@ -95,7 +95,7 @@ const Article = ({ data }) => {
 
 export default Article;
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: any) => {
   const data = await getArticle(params.slug);
 
   return {
@@ -107,7 +107,7 @@ export const getStaticPaths = async () => {
   const articles = await getArticles();
 
   return {
-    paths: articles.data.map((item) => `/blog/${item.attributes.slug}`),
+    paths: articles.data.map((item: any) => `/blog/${item.attributes.slug}`),
     fallback: false
   };
 };

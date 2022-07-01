@@ -76,9 +76,8 @@ const MoreBlogs = () => {
 };
 
 const Blog = ({ blogs }: IBlogs) => {
-  const renderBlogs = blogs.slice(1).map((item) => (
+  const renderBlogs = blogs.slice(1).map((item: any) => (
     <>
-      {console.log(11, item)},
       <BlogCard
         key={item.id}
         img={item.attributes.coverUrl}
