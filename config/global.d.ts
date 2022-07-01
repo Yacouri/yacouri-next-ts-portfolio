@@ -1,11 +1,7 @@
-export {};
+declare module '../assets/icons/*.svg' {
+  import React = require('react');
 
-declare global {
-  //  Declare global props for svg icons
-  type SvgIconProps = {
-    color?: string;
-    size?: number | string;
-    fill?: string;
-    icon: string;
-  };
+  const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
+  export default ReactComponent;
 }
+declare module '*.pdf';
