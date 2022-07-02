@@ -30,6 +30,5 @@ export const siteInfos = {
   url: 'https://yacouri.com',
   description:
     "I'm Zouhir Yaçouri AKA YACOURI, a front end web developer & self-taught Ui/Ux designer as well.",
-  contact: 'co.yacouri@gmail.com',
-  googleAnalyticsId: 'G-81ZSD8WJDC'
+  contact: 'co.yacouri@gmail.com'
 };
