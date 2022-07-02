@@ -88,8 +88,7 @@ const ImageWrapper = styled.div`
 
 const Heading = () => {
   const { mode } = useTheme();
-  const downloadUrl =
-    'https://strapi-yacouri-blog.herokuapp.com/uploads/Zouhir_Yacouri_CV_7473e22293.pdf?updated_at=2022-07-01T21:07:03.172Z';
+  const downloadUrl = 'https://drive.google.com/file/d/1gi5Al1R6GbEYuSRfi6MIR9YRDPdlDGWt/view';
   return (
     <HeadingWrapper>
       <Shapes />
