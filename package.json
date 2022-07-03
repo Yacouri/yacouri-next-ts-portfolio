@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.4.7",
     "@types/axios": "^0.14.0",
     "@types/feather-icons": "^4.7.0",
     "axios": "^0.27.2",

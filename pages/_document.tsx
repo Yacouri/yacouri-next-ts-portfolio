@@ -6,7 +6,6 @@ import Document, {
   DocumentContext,
   DocumentInitialProps
 } from 'next/document';
-import Script from 'next/script';
 import { ServerStyleSheet } from 'styled-components';
 
 class CustomDocument extends Document {
@@ -43,7 +42,8 @@ class CustomDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link
             href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
-            rel="stylesheet"></link>
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
