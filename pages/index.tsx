@@ -4,7 +4,7 @@ import SEO from '../components/common/SEO';
 import Contact from '../components/Contact';
 import Heading from '../components/Heading';
 import Infos from '../components/Infos';
-import { getArticles } from '../utils';
+import { getArticles } from '../services/Blog';
 
 interface IResponse {
   data: [];

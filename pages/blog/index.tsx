@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Circles from '../../assets/icons/circles.svg';
 import BlogCard from '../../components/BlogCard';
 import SEO from '../../components/common/SEO';
+import { getArticles } from '../../services/Blog';
 import { breakpoints } from '../../styles/breakpoints';
-import { getArticles } from '../../utils';
 
 const BlogWrapper = styled.div`
   width: 60%;

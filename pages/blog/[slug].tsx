@@ -3,7 +3,7 @@ import React from 'react';
 import { ArrowLeft } from 'react-feather';
 import styled from 'styled-components';
 import { breakpoints } from '../../styles/breakpoints';
-import { getArticle, getArticles } from '../../utils';
+import { getArticle, getArticles } from '../../services/Blog';
 import { ArticleContent } from '../../styles/globalStyles';
 import ReactMarkdown from 'react-markdown';
 import SEO from '../../components/common/SEO';
