@@ -1,3 +1,4 @@
+import { InferGetStaticPropsType } from 'next';
 import React from 'react';
 import styled from 'styled-components';
 import Circles from '../../assets/icons/circles.svg';
@@ -48,8 +49,8 @@ const Box = styled.div`
   }
 `;
 
-const index = ({ data }: any) => {
-  const renderBlogs = data.map((item: any) => (
+const index = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const renderBlogs = data.map((item) => (
     <>
       <BlogCard
         key={item.id}

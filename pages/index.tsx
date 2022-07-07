@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { InferGetStaticPropsType, NextPage } from 'next';
 import Blog from '../components/Blog';
 import SEO from '../components/common/SEO';
 import Contact from '../components/Contact';
@@ -6,10 +6,7 @@ import Heading from '../components/Heading';
 import Infos from '../components/Infos';
 import { getArticles } from '../services/Blog';
 
-interface IResponse {
-  data: [];
-}
-const Home: NextPage<IResponse> = ({ data }) => {
+const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ data }) => {
   return (
     <div>
       <SEO

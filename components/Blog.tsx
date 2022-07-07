@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { breakpoints } from '../styles/breakpoints';
 
 interface IBlogs {
-  blogs: [];
+  blogs: TBlog[];
 }
 
 const BlogWrapper = styled.div`
@@ -73,8 +73,8 @@ const MoreBlogs = () => {
   );
 };
 
-const Blog = ({ blogs }: IBlogs) => {
-  const renderBlogs = blogs.slice(1).map((item: any) => (
+const Blog = ({ blogs }: TBlogList) => {
+  const renderBlogs = blogs.slice(1).map((item) => (
     <>
       <BlogCard
         key={item.id}

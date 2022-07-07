@@ -7,6 +7,12 @@ import { getArticle, getArticles } from '../../services/Blog';
 import { ArticleContent } from '../../styles/globalStyles';
 import ReactMarkdown from 'react-markdown';
 import SEO from '../../components/common/SEO';
+import { GetStaticProps } from 'next';
+import { ParsedUrlQuery } from 'querystring';
+
+interface IParams extends ParsedUrlQuery {
+  slug: string;
+}
 
 const ArticleWrapper = styled.div`
   max-width: 800px;
@@ -59,8 +65,9 @@ const ArticleTimeStamp = styled.div`
   }
 `;
 
-const Article = ({ data }: any) => {
+const Article = (data: TBlog) => {
   const { attributes } = data;
+
   return (
     <>
       <SEO title={attributes.title} description={attributes.title} />
@@ -74,7 +81,7 @@ const Article = ({ data }: any) => {
           </Link>
         </BackLink>
         {/* <ArticleImage
-          // src="https://www.yacouri.com/static/5b41bac35273a8f267e13d79169b1c9c/ee604/css-glass-effect-tutorial-banner.png"
+          src="https://www.yacouri.com/static/5b41bac35273a8f267e13d79169b1c9c/ee604/css-glass-effect-tutorial-banner.png"
           src={attributes.coverUrl}
           alt=""
         /> */}
@@ -95,19 +102,20 @@ const Article = ({ data }: any) => {
 
 export default Article;
 
-export const getStaticProps = async ({ params }: any) => {
-  const data = await getArticle(params.slug);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { slug } = params as IParams;
+  const data = await getArticle(slug);
 
   return {
-    props: data
+    props: data.data
   };
 };
 
 export const getStaticPaths = async () => {
-  const articles = await getArticles();
+  const { data } = await getArticles();
 
   return {
-    paths: articles.data.map((item: any) => `/blog/${item.attributes.slug}`),
+    paths: data.map((item) => `/blog/${item.attributes.slug}`),
     fallback: false
   };
 };
