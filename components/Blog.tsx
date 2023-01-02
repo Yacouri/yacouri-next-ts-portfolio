@@ -5,10 +5,6 @@ import SectionTitle from './common/SectionTitle';
 import Link from 'next/link';
 import { breakpoints } from '../styles/breakpoints';
 
-interface IBlogs {
-  blogs: TBlog[];
-}
-
 const BlogWrapper = styled.div`
   margin: 100px auto;
   width: 60%;
